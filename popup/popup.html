@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+     License, v. 2.0. If a copy of the MPL was not distributed with this
+     file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Volume Booster</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="header">
+        <h1 class="title">Volume Booster</h1>
+        <p class="subtitle">0% – 800% on pages with audio or video</p>
+      </header>
+
+      <div class="readout" aria-live="polite">
+        <span id="volumeValue" class="readout-value">100</span>
+        <span class="readout-unit">%</span>
+      </div>
+
+      <label class="slider-label" for="volumeSlider">Volume</label>
+      <input
+        id="volumeSlider"
+        class="slider"
+        type="range"
+        min="0"
+        max="800"
+        step="1"
+        value="100"
+      />
+
+      <div class="ticks" aria-hidden="true">
+        <span>0%</span>
+        <span>100%</span>
+        <span>400%</span>
+        <span>800%</span>
+      </div>
+
+      <div class="presets" role="group" aria-label="Volume presets">
+        <button type="button" class="preset" data-volume="0">Mute</button>
+        <button type="button" class="preset" data-volume="100">100%</button>
+        <button type="button" class="preset" data-volume="200">200%</button>
+        <button type="button" class="preset" data-volume="400">400%</button>
+        <button type="button" class="preset" data-volume="800">800%</button>
+      </div>
+
+      <p id="status" class="status" role="status"></p>
+    </main>
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
